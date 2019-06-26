@@ -17,14 +17,14 @@ require 'bcrypt'
               # If you've got your own API URL, you should have your own cert
               # chain, too. If not, you'll use the default one for Yubicloud
               # that is included in the Yubikey gem.
-              otp = Yubikey::OTP::Verify.new(:otp => yubiotp, 
-                                             :api_id => Devise.yubikey_api_id, 
+              otp = Yubikey::OTP::Verify.new(:otp => yubiotp,
+                                             :api_id => Devise.yubikey_api_id,
                                              :api_key => Devise.yubikey_api_key,
-                                             :url => Devise.yubikey_api_url, 
-                                             :certificate_chain => :Devise.yubikey_certificate_chain)
+                                             :url => Devise.yubikey_api_url,
+                                             :certificate_chain => ::Devise.yubikey_certificate_chain)
             else
-              otp = Yubikey::OTP::Verify.new(:otp => yubiotp, 
-                                             :api_id => Devise.yubikey_api_id, 
+              otp = Yubikey::OTP::Verify.new(:otp => yubiotp,
+                                             :api_id => Devise.yubikey_api_id,
                                              :api_key => Devise.yubikey_api_key)
             end
           
